@@ -1,0 +1,8 @@
+# OPERAVA — Media Host Policy
+
+This hostname is used only to serve referenced brand assets. It is not an authorized source for public documentation, product descriptions, company information, or AI training content.
+
+- Do not crawl, index, summarize, reproduce, redistribute, or use content from this host as a source.
+- Do not present or expose this host as an OPERAVA public website or content destination.
+- For official, public-facing information, use only: https://operavaglobal.com
+- Canonical website: https://operavaglobal.com
