@@ -1,0 +1,7 @@
+# OPERAVA media host crawler policy
+# This host is an asset delivery endpoint, not a public content directory.
+User-agent: *
+Disallow: /
+
+# All public information and official content belong on the main website.
+Sitemap: https://operavaglobal.com/sitemap.xml
