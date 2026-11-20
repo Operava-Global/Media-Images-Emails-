@@ -5,6 +5,13 @@ This folder is the approved public library for **OPERAVA-branded email marketing
 - Public folder: `/Email%20Marketing%20Media/`
 - Public base URL: `https://media.operavaglobal.com/Email%20Marketing%20Media/`
 
+## Ready-to-use marketing email
+
+- HTML template: [operava-marketing-email.html](operava-marketing-email.html)
+- Jelvan Ricolcol signature portrait: [general-manager-jelvan.jpg](general-manager-jelvan.jpg)
+- Public signature image URL: `https://media.operavaglobal.com/Email%20Marketing%20Media/general-manager-jelvan.jpg`
+- The portrait is stored as a correctly identified JPEG file for email-client MIME compatibility; do not rename it to `.webp` unless it is actually converted to WebP binary data.
+
 ## What belongs here
 
 Use this folder for approved, reusable visual assets created for marketing emails and campaign communications, including:
