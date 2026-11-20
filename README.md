@@ -1,13 +1,19 @@
 # OPERAVA Email & Media Assets
 
-Public asset repository for OPERAVA email signatures and approved service imagery.
+Public media library for OPERAVA email signatures and approved service imagery.
 
-## Published assets
-- `public/Email Signatures/` — department and general email-signature portraits.
-- `public/Services Images/` — approved service/marketing imagery (add source-approved files here).
+## Published paths
+- `/Email%20Signatures/` — email signature portraits.
+- `/Services%20Images/` — approved public-facing service imagery.
+- `/` — responsive media-library preview page.
 
-## GitHub Pages
-The Pages workflow publishes the `public/` directory. Configure **Settings → Pages → Build and deployment → Source: GitHub Actions** if Pages is not already enabled. The intended custom domain is `media.operavaglobal.com`; point its DNS CNAME to `Operava-Global.github.io` and verify the domain in GitHub Pages before relying on it.
+## Correct image formats
+The original `.webp`-named files were inspected and contain JPEG image data. To ensure browsers and email clients receive the correct `image/jpeg` MIME type, canonical `.jpg` copies are now published alongside the original filenames. **Use the .jpg URLs in email templates.** The legacy .webp-named files remain temporarily for compatibility; do not use them for new references.
 
-## Source and file-format note
-Signature assets were copied from `DevJel/CEO_DASHBOARD-` (`src/brand/`). Their original filenames are preserved. Although the source filenames end in `.webp`, the image bytes are JPEG; serve these files as `image/jpeg` unless the files are converted and renamed in a separate reviewed change.
+## GitHub Pages deployment
+The GitHub Actions workflow publishes only the `public/` directory. It validates the domain file and canonical image assets before upload. The published root contains `CNAME` for `media.operavaglobal.com`.
+
+For custom-domain activation, set the repository's Pages source to **GitHub Actions**, verify the custom domain in Settings → Pages, and enable HTTPS when GitHub reports the certificate is ready. DNS is managed in Cloudflare.
+
+## Cache and MIME behavior
+GitHub Pages derives static content types from file extensions and does not support Cloudflare Workers-style bindings or arbitrary `_headers` configuration. Use accurate extensions (`.jpg`, `.png`, `.svg`, `.webp`) and keep image URLs stable. Cloudflare DNS is currently configured as DNS-only for GitHub Pages.

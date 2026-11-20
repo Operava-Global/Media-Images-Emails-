@@ -26,12 +26,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Validate published media
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s public/CNAME
+          grep -qx 'media.operavaglobal.com' public/CNAME
+          test -s 'public/index.html'
+          test -s 'public/Email Signatures/index.html'
+          test -s 'public/Services Images/index.html'
+          count=$(find 'public/Email Signatures' -maxdepth 1 -type f -name '*.jpg' | wc -l)
+          test "$count" -ge 11
+          echo "Validated $count canonical JPEG signature assets."
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload public directory
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
